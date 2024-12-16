@@ -1,0 +1,60 @@
+// build.gradle for android libraries that contain UI
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
+
+android {
+
+    namespace project.applicationId
+    compileSdkVersion project.compileSdk
+    defaultConfig {
+        minSdkVersion project.minSdk
+        targetSdkVersion project.compileSdk
+        versionCode project.versionCode
+        versionName project.versionName
+        testInstrumentationRunner project.testRunner
+    }
+
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            debug {
+                enableAndroidTestCoverage = true
+                enableUnitTestCoverage = true
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+
+
+}
+
+dependencies{
+
+    implementation libs.hilt
+    implementation libs.hiltNavigationCompose
+    kapt libs.hiltDaggerCompiler
+    implementation libs.javaInject
+    implementation libs.composeRuntime
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+
+}
