@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
+    id("kotlin-parcelize")
 }
 
 apply("../config.gradle.kts")
@@ -56,8 +59,13 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+    implementation(libs.hilt)
+    implementation(libs.hiltNavigationCompose)
+    ksp(libs.hiltDaggerCompiler)
+    
     implementation(project(":core:utils"))
     implementation(project(":core:ui"))
+    implementation(project(":features:home"))
 
 
     testImplementation(libs.junit)

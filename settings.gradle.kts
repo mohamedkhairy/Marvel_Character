@@ -22,5 +22,6 @@ dependencyResolutionManagement {
 rootProject.name = "Marvel Character"
 include(":app")
 include(":core", ":core:sharedData",":core:utils", ":core:ui", ":core:network")
+include(":features", ":features:home")
 
  

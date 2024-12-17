@@ -10,7 +10,8 @@
 .DS_Store
 /build
 /captures
+/.idea
 .externalNativeBuild
 .cxx
 local.properties
-secrets.defults.properties
+secrets.defaults.properties

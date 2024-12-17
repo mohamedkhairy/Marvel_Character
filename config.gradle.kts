@@ -11,7 +11,5 @@ extra.apply {
   set("debugBuildType", "debug")
   set("releaseBuildType", "release")
 
-  // Compose Version
-  set("composeVersion", "1.5.8")
 
 }

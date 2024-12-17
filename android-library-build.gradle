@@ -2,8 +2,8 @@
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-parcelize'
+apply plugin: 'com.google.devtools.ksp'
 
 android {
 
@@ -51,7 +51,7 @@ dependencies{
 
     implementation libs.hilt
     implementation libs.hiltNavigationCompose
-    kapt libs.hiltDaggerCompiler
+    ksp libs.hiltDaggerCompiler
     implementation libs.javaInject
     implementation libs.composeRuntime
     implementation libs.androidx.core.ktx

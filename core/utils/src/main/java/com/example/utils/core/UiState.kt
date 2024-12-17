@@ -20,6 +20,10 @@ sealed class UiState<T> {
         val value: String? = null
     ) : UiState<T>()
 
+    data class Start<T>(
+        val value: String? = null
+    ) : UiState<T>()
+
 
     companion object {
 
