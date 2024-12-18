@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.sharedData.MarvelCharacter
 import com.example.home.domain.useCase.MarvelCharactersUseCase
+import com.example.home.utils.Constant.OFFSET
 import com.example.utils.core.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -43,7 +44,7 @@ class HomeViewModel @Inject constructor(
             if (!isLoading.value || hasMoreData.value) {
                 if (offset >= total) {
                     hasMoreData.value = false
-                    flowOf(UiState.Success())
+                    flowOf(UiState.Ideal())
                 } else {
                     hasMoreData.value = true
                     marvelCharactersUseCase(offset)
@@ -69,4 +70,3 @@ class HomeViewModel @Inject constructor(
     }
 }
 
-private const val OFFSET = "offset"

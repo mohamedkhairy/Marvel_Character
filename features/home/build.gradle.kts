@@ -29,5 +29,11 @@ dependencies {
     "testImplementation"(libs.ktorContentNegotiation)
     "testImplementation"(libs.ktorSerialization)
 
+    "testImplementation"(libs.bundles.unit.test)
+    "androidTestImplementation"(libs.bundles.ui.test)
+    "kspAndroidTest"(libs.hiltDaggerCompiler)
+
+
+    "kspTest"( libs.hilt.compiler)
 
 }
