@@ -7,11 +7,12 @@
 <h4> Compose navigation system
 <h4> Dagger Hilt<br>
 <h4> Unit Test<br>
-<h4> Compose UI Test<br>
-
+<h4> Compose UI Test<be>
+<h4> APK -> https://github.com/mohamedkhairy/Marvel_Character/blob/master/app/release/app-release.apk
   
 <br>
 <h3> ******* ->  
+<h4>secrets.defaults.properties -> to run the code you should provide public-key and private-key in this file 
 <h3>The App module</h3>
 <h5>app -> have MainActivity, the navigation system of the app, and application class</h5>
 <h5>core -> have the most usable components through the app</h5>
