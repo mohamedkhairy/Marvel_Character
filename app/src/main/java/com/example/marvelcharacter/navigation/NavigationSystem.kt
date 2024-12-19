@@ -3,6 +3,8 @@ package com.example.marvelcharacter.navigation
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.example.details.navigation.detailsScreen
+import com.example.details.navigation.navigateToDetails
 import com.example.home.presentation.navigation.HOME_ROUTE
 import com.example.home.presentation.navigation.homeScreen
 
@@ -18,12 +20,12 @@ fun NavigationSystem() {
         builder = {
             homeScreen(
                 onCharacterClick = {
-//                    navController.navigateToRecharge(it)
+                    navController.navigateToDetails(it)
                 }
             )
-//            rechargeScreen {
-//                navController.popBackStack(HOME_ROUTE, false)
-//            }
+            detailsScreen {
+                navController.popBackStack(HOME_ROUTE, false)
+            }
         }
     )
 

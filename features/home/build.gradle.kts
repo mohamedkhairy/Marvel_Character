@@ -12,7 +12,6 @@ dependencies {
     val composeBom = platform(libs.androidx.compose.bom)
 
     "implementation"(composeBom)
-    "implementation"(libs.serialization)
     "implementation"(libs.bundles.jetpackCompost)
     "implementation"(libs.hiltNavigationCompose)
     "implementation"(libs.ktorAndroid)
@@ -28,12 +27,11 @@ dependencies {
     "testImplementation"(libs.ktor.client.mock)
     "testImplementation"(libs.ktorContentNegotiation)
     "testImplementation"(libs.ktorSerialization)
+    "kspTest"( libs.hilt.compiler)
 
     "testImplementation"(libs.bundles.unit.test)
     "androidTestImplementation"(libs.bundles.ui.test)
     "kspAndroidTest"(libs.hiltDaggerCompiler)
 
-
-    "kspTest"( libs.hilt.compiler)
 
 }

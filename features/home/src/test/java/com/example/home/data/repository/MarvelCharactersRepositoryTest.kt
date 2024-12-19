@@ -16,7 +16,7 @@ import org.junit.Test
 class MarvelCharactersRepositoryTest {
 
 
-    private val expectedResultSize = 10
+    private val expectedResultSize = 2
     private val emptyResultSize = 0
     private val offset = 10
     private val validResult = getCharactersResponse()

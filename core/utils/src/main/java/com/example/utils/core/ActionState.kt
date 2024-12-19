@@ -1,6 +1,10 @@
 package com.example.utils.core
 
-enum class ActionState {
-    NONE,
-    ACTION
+
+sealed class ActionState {
+
+    data class Open(val url: String) : ActionState()
+
+    data object Close : ActionState()
+
 }

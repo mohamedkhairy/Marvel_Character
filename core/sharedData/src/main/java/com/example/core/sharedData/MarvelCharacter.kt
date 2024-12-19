@@ -7,4 +7,5 @@ data class MarvelCharacter(
     val resourceURI: String?,
     val thumbnail: String?,
     val total: Int,
+    val characterResources: List<CharacterResources?>
 )

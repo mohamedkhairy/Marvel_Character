@@ -11,12 +11,17 @@ import com.example.utils.core.UiState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.*
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.resetMain
+import kotlinx.coroutines.test.runTest
+import kotlinx.coroutines.test.setMain
 import org.junit.After
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-import org.mockito.kotlin.*
-import org.junit.Assert.*
+import org.mockito.kotlin.any
+import org.mockito.kotlin.mock
+import org.mockito.kotlin.whenever
 
 @ExperimentalCoroutinesApi
 class HomeViewModelTest {
@@ -26,9 +31,9 @@ class HomeViewModelTest {
     private lateinit var savedStateHandle: SavedStateHandle
     private lateinit var homeViewModel: HomeViewModel
     val characters = listOf(
-        MarvelCharacter(total = 20, id = 550, name = "Spider Man", thumbnail = "thumbnail", description = "description", resourceURI = "resourceURI"),
-        MarvelCharacter(total = 20, id = 1100, name = "Iron Man", thumbnail = "thumbnail1", description = "description1", resourceURI = "resourceURI1"),
-        MarvelCharacter(total = 20, id = 1101, name = "Captain America", thumbnail = "thumbnail2", description = "description2", resourceURI = "resourceURI2")
+        MarvelCharacter(total = 20, id = 550, name = "Spider Man", thumbnail = "thumbnail", description = "description", resourceURI = "resourceURI" , characterResources = emptyList()),
+        MarvelCharacter(total = 20, id = 1100, name = "Iron Man", thumbnail = "thumbnail1", description = "description1", resourceURI = "resourceURI1", characterResources = emptyList()),
+        MarvelCharacter(total = 20, id = 1101, name = "Captain America", thumbnail = "thumbnail2", description = "description2", resourceURI = "resourceURI2", characterResources = emptyList())
     )
 
     @Before

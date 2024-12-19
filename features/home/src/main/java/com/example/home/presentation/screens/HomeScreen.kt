@@ -92,6 +92,7 @@ internal fun HomeScreen(
                     }
 
                     is UiState.Success -> {
+
                         if (resultUiState.data.isNullOrEmpty()) {
                             ViewStateMessage("can't find any result")
                         } else {

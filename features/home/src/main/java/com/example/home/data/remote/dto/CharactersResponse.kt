@@ -6,8 +6,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class CharactersResponse(
-    @SerialName("attributionText")
-    val attributionText: String,
     @SerialName("code")
     val code: Int,
     @SerialName("data")

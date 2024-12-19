@@ -62,10 +62,11 @@ dependencies {
     implementation(libs.hilt)
     implementation(libs.hiltNavigationCompose)
     ksp(libs.hiltDaggerCompiler)
-    
+
     implementation(project(":core:utils"))
     implementation(project(":core:ui"))
     implementation(project(":features:home"))
+    implementation(project(":features:Details"))
 
 
     testImplementation(libs.junit)

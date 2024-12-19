@@ -15,3 +15,5 @@ inline fun <reified T> String.jsonParse(): T {
     return gson.fromJson(this, typeToken)
 }
 
+fun Any?.isNotNull(): Boolean =
+    this != null

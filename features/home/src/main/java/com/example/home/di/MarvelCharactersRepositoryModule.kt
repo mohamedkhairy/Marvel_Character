@@ -16,8 +16,8 @@ object MarvelCharactersRepositoryModule {
     @Provides
     fun provideMarvelCharactersRepository(
         service: MarvelCharactersService,
-        entityDomainMapper: CharactersMapper,
+        charactersMapper: CharactersMapper,
     ): MarvelCharactersRepository =
-        MarvelCharactersRepositoryImp(service, entityDomainMapper)
+        MarvelCharactersRepositoryImp(service, charactersMapper)
 
 }
