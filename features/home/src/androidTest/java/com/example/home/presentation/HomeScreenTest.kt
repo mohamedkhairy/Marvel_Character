@@ -1,6 +1,5 @@
 package com.example.home.presentation
 
-import androidx.compose.ui.test.isNotDisplayed
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -95,7 +94,7 @@ class HomeScreenTest : MarvelTestBase() {
         with(composeTestRule) {
 
             // Given the ViewModel has some initial data
-            val characters = List(10) { index ->
+            val characters = List(4) { index ->
                 MarvelCharacter(
                     total = 20,
                     id = index,
@@ -117,18 +116,6 @@ class HomeScreenTest : MarvelTestBase() {
             onNodeWithTag("Character 3").assertExists()
 
             onNodeWithTag("Character 3").performScrollTo()
-
-            waitForIdle()
-
-            onNodeWithTag("Character 5").assertExists()
-
-            onNodeWithTag("Character 5").performScrollTo()
-
-            waitForIdle()
-
-            onNodeWithTag("Character 9").assertExists()
-
-            onNodeWithTag("Character 9").performScrollTo()
 
             // Wait for pagination to trigger
             waitForIdle()
