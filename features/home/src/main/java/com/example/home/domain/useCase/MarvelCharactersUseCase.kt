@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class MarvelCharactersUseCase @Inject constructor(
+open class MarvelCharactersUseCase @Inject constructor(
     private val marvelCharactersRepository: MarvelCharactersRepository,
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher
 ) : FlowUseCase<Int, List<MarvelCharacter>?>(ioDispatcher) {

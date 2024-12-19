@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.core.sharedData.MarvelCharacter
@@ -32,6 +33,7 @@ fun CharacterCardItem(
         shape = RoundedCornerShape(0.dp),
         modifier = Modifier
             .fillMaxWidth()
+            .testTag(marvelCharacter.name)
             .clickable { openDetails(marvelCharacter) }
     ) {
 
@@ -66,13 +68,13 @@ fun CharacterCardItem(
 @Composable
 fun TextWithShape(value: String) {
     Surface(
-        color = Color.White, // Background color
+        color = Color.White,
         shape = RoundedCornerShape(
             topStart = 5.dp,
             topEnd = 50.dp,
             bottomStart = 50.dp,
-            bottomEnd = 5.dp), // Apply rounded corners
-        shadowElevation = 4.dp, // Optional: Elevation for shadow
+            bottomEnd = 5.dp),
+        shadowElevation = 4.dp,
     ) {
         Text(
             modifier = Modifier.padding(horizontal = 34.dp, vertical = 8.dp),

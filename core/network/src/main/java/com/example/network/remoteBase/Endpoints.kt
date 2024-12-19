@@ -19,7 +19,7 @@ object Endpoints {
             parameters.append("apikey", API_KEY)
             parameters.append("hash", hash())
             parameters.append("offset", offset.toString())
-            parameters.append("limit", "2")
+            parameters.append("limit", "10")
         }.build()
 
     fun CHARACTERS_DETAILS_API(characterId: Int) =

@@ -3,8 +3,18 @@ apply {
 }
 
 plugins {
+    alias(libs.plugins.android.library)
     id("kotlinx-serialization")
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
+
+}
+android {
+    namespace = "${rootProject.extra.get("applicationId")}.home"
+
+    defaultConfig {
+        testInstrumentationRunner = "com.example.home.runner.CustomTestRunner"
+    }
 }
 
 dependencies {
@@ -32,6 +42,8 @@ dependencies {
     "testImplementation"(libs.bundles.unit.test)
     "androidTestImplementation"(libs.bundles.ui.test)
     "kspAndroidTest"(libs.hiltDaggerCompiler)
+    "kspAndroidTest"( libs.hilt.compiler)
 
 
+    "debugImplementation"(libs.androidx.ui.test.manifest)
 }

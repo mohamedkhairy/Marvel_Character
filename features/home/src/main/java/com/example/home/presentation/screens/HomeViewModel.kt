@@ -23,7 +23,7 @@ import javax.inject.Inject
 
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+open class HomeViewModel @Inject constructor(
     private val marvelCharactersUseCase: MarvelCharactersUseCase,
     private val savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
@@ -39,7 +39,7 @@ class HomeViewModel @Inject constructor(
     private var hasMoreData = mutableStateOf(true)
 
 
-    val resultUiState: StateFlow<UiState<List<MarvelCharacter>?>> =
+    open val resultUiState: StateFlow<UiState<List<MarvelCharacter>?>> =
         offsetState.flatMapLatest { offset ->
             if (!isLoading.value || hasMoreData.value) {
                 if (offset >= total) {
@@ -60,7 +60,7 @@ class HomeViewModel @Inject constructor(
             initialValue = UiState.Start(),
         )
 
-    fun loadNextPage(
+    open fun loadNextPage(
         total: Int, newItemsCount: Int, lazyListState: LazyListState
     ) {
         this.offset += newItemsCount
